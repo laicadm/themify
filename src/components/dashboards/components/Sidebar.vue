@@ -1,9 +1,10 @@
 <template>
     <aside>
       <ul>
-        <li><router-link to="/dashboard/home">Home</router-link></li>
-        <li><router-link to="/dashboard/profile">Profile</router-link></li>
-        <li><router-link to="/dashboard/settings">Settings</router-link></li>
+        <li><router-link to="/dashboard/home">Buttons</router-link></li>
+        <li><router-link to="/dashboard/profile">Fields</router-link></li>
+        <li><router-link to="/dashboard/settings">Forms</router-link></li>
+        <li><router-link to="/dashboard/settings">Tables</router-link></li>
       </ul>
     </aside>
 </template>
@@ -11,7 +12,7 @@
 <style>
     aside {
         width: 200px;
-        background-color: #f4f4f4;
+        background-color: black;
         padding: 1rem;
     }
     ul {

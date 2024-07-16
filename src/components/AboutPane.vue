@@ -4,7 +4,7 @@ import CustomIcon from './icons/CustomIcon.vue'
 </script>
 
 <template>
-  <FeatureItem>
+  <FeatureItem class="f-wrapper">
     <template #icon>
       <CustomIcon icon="mdiAccountCircle" :size="32" class="default-icon"/>
     </template>
@@ -15,7 +15,7 @@ import CustomIcon from './icons/CustomIcon.vue'
     I am a software developer who is passionate about web development. 
   </FeatureItem>
 
-  <FeatureItem>
+  <FeatureItem class="f-wrapper">
     <template #icon>
       <CustomIcon icon="mdiMenu" :size="32" class="default-icon"/>
     </template>
@@ -26,7 +26,7 @@ import CustomIcon from './icons/CustomIcon.vue'
     which is a popular JavaScript framework for building web user interfaces.
   </FeatureItem>
 
-  <FeatureItem>
+  <FeatureItem class="f-wrapper">
     <template #icon>
       <CustomIcon icon="mdiGithub" :size="32" class="default-icon"/>
     </template>
@@ -37,7 +37,7 @@ import CustomIcon from './icons/CustomIcon.vue'
     for reference. Impart your knowledge and skills, and be a contributor.
   </FeatureItem>
 
-  <FeatureItem>
+  <FeatureItem class="f-wrapper">
     <template #icon>
       <CustomIcon icon="mdiWeb" :size="32" class="default-icon"/>
     </template>
@@ -48,7 +48,7 @@ import CustomIcon from './icons/CustomIcon.vue'
     Please visit this personal website to view the other web applications I have developed. 
   </FeatureItem>
 
-  <FeatureItem>
+  <FeatureItem class="f-wrapper">
     <template #icon>
       <CustomIcon icon="mdiEmail" :size="32" class="default-icon"/>
     </template>
@@ -62,5 +62,12 @@ import CustomIcon from './icons/CustomIcon.vue'
 <style scoped>
 .default-icon {
   color: rgb(78, 133, 235);
+}
+
+.f-wrapper {
+  padding: 0 5rem;
+  text-align: justify;
+  line-height: 2rem;
+  padding-bottom: 2rem;
 }
 </style>

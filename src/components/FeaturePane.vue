@@ -4,7 +4,7 @@ import CustomIcon from './icons/CustomIcon.vue'
 </script>
 
 <template>
-  <FeatureItem>
+  <FeatureItem class="f-wrapper">
     <template #icon>
       <CustomIcon icon="mdiWaves" :size="32" class="breeze-icon"/>
     </template>
@@ -15,7 +15,7 @@ import CustomIcon from './icons/CustomIcon.vue'
     exudes a sense of tranquility and stability to revitalize those around it.
   </FeatureItem>
 
-  <FeatureItem>
+  <FeatureItem class="f-wrapper">
     <template #icon>
       <CustomIcon icon="mdiGrass" :size="32" class="pasture-icon"/>
     </template>
@@ -26,7 +26,7 @@ import CustomIcon from './icons/CustomIcon.vue'
     It prefers simplicity and a slower pace of life.
   </FeatureItem>
 
-  <FeatureItem>
+  <FeatureItem class="f-wrapper">
     <template #icon>
       <CustomIcon icon="mdiCloud" :size="32" class="autumn-sky-icon"/>
     </template>
@@ -37,7 +37,7 @@ import CustomIcon from './icons/CustomIcon.vue'
     blends the beautiful transitions of a warm summer to the deeper hues of winter.
   </FeatureItem>
 
-  <FeatureItem>
+  <FeatureItem class="f-wrapper">
     <template #icon>
       <CustomIcon icon="mdiIceCream" :size="32" class="macaroons-icon"/>
     </template>
@@ -48,7 +48,7 @@ import CustomIcon from './icons/CustomIcon.vue'
     A combination of subtle pink and teal that reflects sweetness.
   </FeatureItem>
 
-  <FeatureItem>
+  <FeatureItem class="f-wrapper">
     <template #icon>
       <CustomIcon icon="mdiContrastCircle" :size="32" />
     </template>
@@ -64,13 +64,23 @@ import CustomIcon from './icons/CustomIcon.vue'
 .breeze-icon {
   color: blue;
 }
+
 .pasture-icon {
   color: green;
 }
+
 .autumn-sky-icon {
   color: rgb(78, 133, 235);
 }
+
 .macaroons-icon {
   color: palevioletred;
+}
+
+.f-wrapper {
+  padding: 0 5rem;
+  text-align: justify;
+  line-height: 2rem;
+  padding-bottom: 2rem;
 }
 </style>

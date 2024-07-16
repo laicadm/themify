@@ -4,7 +4,7 @@ import IntroPane from './components/IntroPane.vue'
 import { ref, watch } from 'vue'
 
 
-const showHeader = ref(false)
+const showHeader = ref(true)
 const route = useRoute()
 watch(
   () => route.path,
@@ -29,6 +29,9 @@ watch(
     </div>
   </header>
 
+  <div v-else>
+  </div>
+
   <RouterView />
 </template>
 
@@ -36,6 +39,7 @@ watch(
 header {
   line-height: 1.5;
   max-height: 100vh;
+  padding: 3rem;
 }
 
 .logo {
