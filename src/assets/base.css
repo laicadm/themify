@@ -23,8 +23,24 @@
   /* dashboard colors */
 
   /* breezy */
-  --vt-c-breezy-blue: #6495ED;
-  --vt-c-breezy-orange: #FF7F50;
+  --vt-c-breezy-blue-1: rgba(93, 173, 226);
+  --vt-c-breezy-blue-2: rgba(52, 152, 219);
+
+  /* pasture */
+  --vt-c-pasture-green-1: rgba(102, 187, 106);
+  --vt-c-pasture-green-2: rgba(75, 175, 80);
+
+  /* autumn sky */
+  --vt-c-autumnsky-orange-1: rgba(255, 183, 77);
+  --vt-c-autumnsky-orange-2: rgba(255, 167, 38);
+  --vt-c-autumnsky-blue-1: rgba(93, 173, 226);
+  --vt-c-autumnsky-blue-2: rgba(52, 152, 219);
+
+  /* macaroons */
+  --vt-c-macaroons-teal-1: rgba(162, 217, 206);
+  --vt-c-macaroons-teal-2: rgba(115, 198, 182);
+  --vt-c-macaroons-pink-1: rgba(239, 154, 154);
+  --vt-c-macaroons-pink-2: rgba(229, 115, 115);
 }
 
 /* semantic color variables for this project */

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Navbar from './components/Navbar.vue';
 import Sidebar from './components/Sidebar.vue';
+import { ref } from 'vue';
 
 defineProps<{
   navTitle: string
@@ -8,13 +9,19 @@ defineProps<{
   sideBarBg: string
 }>()
 
+const isSidebarCollapsed = ref(true);
+
+const toggleSidebar = () => {
+  isSidebarCollapsed.value = !isSidebarCollapsed.value;
+};
+
 </script>
 
 <template>
     <div class="dashboard">
       <Navbar :navTitle="navTitle" :navBg="navBg"/>
       <div class="main">
-        <Sidebar :sideBarBg="sideBarBg" />
+        <Sidebar :sideBarBg="sideBarBg" :isCollapsed="isSidebarCollapsed" @toggle="toggleSidebar"/>
         <div class="content">
           <router-view />
         </div>

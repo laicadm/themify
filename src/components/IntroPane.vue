@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
   <div class="greetings">
-    <h1 class="blue">{{ msg }}</h1>
+    <h1 class="blue-link">{{ msg }}</h1>
     <h3>
       Offers you a dashboard of various themes.
       From forms to tables, we got the things you need!

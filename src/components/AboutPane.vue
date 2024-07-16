@@ -70,4 +70,8 @@ import CustomIcon from './icons/CustomIcon.vue'
   line-height: 2rem;
   padding-bottom: 2rem;
 }
+
+a {
+    color: #4182b4;
+}
 </style>

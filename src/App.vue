@@ -74,6 +74,10 @@ nav a:first-of-type {
   border: 0;
 }
 
+a {
+  color: #4182b4;
+}
+
 @media (min-width: 1024px) {
   header {
     display: flex;

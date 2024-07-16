@@ -18,10 +18,31 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
     },
+    // theme: breezy
     {
       path: '/breezy',
-      name: 'theme1',
+      name: 'breezy',
       component: BreezyView
+    },
+    {
+      path: '/breezy/buttons',
+      name: 'breezy-buttons',
+      component: () => import('../views/BreezyView.vue')
+    },
+    {
+      path: '/breezy/fields',
+      name: 'breezy-fields',
+      component: () => import('../views/BreezyView.vue')
+    },
+    {
+      path: '/breezy/forms',
+      name: 'breezy-forms',
+      component: () => import('../views/BreezyView.vue')
+    },
+    {
+      path: '/breezy/tables',
+      name: 'breezy-tables',
+      component: () => import('../views/BreezyView.vue')
     }
   ]
 })
