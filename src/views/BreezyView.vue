@@ -4,6 +4,10 @@ import DashboardPane from '@/components/dashboards/DashboardPane.vue';
 
 <template>
   <main>
-    <DashboardPane />
+    <DashboardPane 
+      navTitle="Breezy"
+      navBg="var(--vt-c-breezy-blue)"
+      sideBarBg="var(--vt-c-breezy-orange)" 
+    />
   </main>
 </template>

@@ -1,6 +1,13 @@
+<script setup lang="ts">
+defineProps<{
+  navTitle: string
+  navBg: string
+}>()
+</script>
+
 <template>
-    <nav class="dashboard-nav">
-      <h1>Dashboard Navbar</h1>
+    <nav class="dashboard-nav" :style="{ backgroundColor: navBg }">
+      <h1>{{ navTitle }}</h1>
     </nav>
 </template>
 
@@ -8,6 +15,5 @@
     .dashboard-nav {
         color: #fff;
         padding: 1rem;
-        background-color: aqua;
     }
 </style>

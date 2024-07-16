@@ -19,6 +19,12 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+  /* dashboard colors */
+
+  /* breezy */
+  --vt-c-breezy-blue: #6495ED;
+  --vt-c-breezy-orange: #FF7F50;
 }
 
 /* semantic color variables for this project */
@@ -60,6 +66,7 @@
     --color-text-bright: var(--vt-c-text-dark-2);
   }
 }
+
 
 *,
 *::before,

@@ -33,7 +33,7 @@ import CustomIcon from './icons/CustomIcon.vue'
     <template #heading>Repository</template>
 
     Visit the public repository at
-    <a href="https://github.com/laicadm" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://github.com/laicadm/themify" target="_blank" rel="noopener">GitHub</a>
     for reference. Impart your knowledge and skills, and be a contributor.
   </FeatureItem>
 

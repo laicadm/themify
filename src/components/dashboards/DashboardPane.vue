@@ -1,13 +1,20 @@
 <script setup lang="ts">
 import Navbar from './components/Navbar.vue';
 import Sidebar from './components/Sidebar.vue';
+
+defineProps<{
+  navTitle: string
+  navBg: string
+  sideBarBg: string
+}>()
+
 </script>
 
 <template>
     <div class="dashboard">
-      <Navbar />
+      <Navbar :navTitle="navTitle" :navBg="navBg"/>
       <div class="main">
-        <Sidebar />
+        <Sidebar :sideBarBg="sideBarBg" />
         <div class="content">
           <router-view />
         </div>
