@@ -3,17 +3,18 @@ import { defineProps, defineEmits } from 'vue';
 import CustomIcon from '@/components/icons/CustomIcon.vue';
 import { ref } from 'vue';
 
-defineProps<{
+const props = defineProps<{
+  pageName: string
   sideBarBg: string
   isCollapsed: boolean
 }>()
 
 const menuItems = ref([
-  { name: 'Home', route: '/breezy', icon: 'mdiHome', tooltip: 'Home' },
-  { name: 'Buttons', route: '/breezy/buttons', icon: 'mdiButtonPointer', tooltip: 'Buttons' },
-  { name: 'Fields', route: '/breezy/fields', icon: 'mdiFormTextbox', tooltip: 'Fields' },
-  { name: 'Forms', route: '/breezy/forms', icon: 'mdiSelect', tooltip: 'Forms' },
-  { name: 'Tables', route: '/breezy/tables', icon: 'mdiTable', tooltip: 'Tables' }
+  { name: 'Home', route: `/${props.pageName}`, icon: 'mdiHome', tooltip: 'Home' },
+  { name: 'Buttons', route: `/${props.pageName}/buttons`, icon: 'mdiButtonPointer', tooltip: 'Buttons' },
+  { name: 'Fields', route: `/${props.pageName}/fields`, icon: 'mdiFormTextbox', tooltip: 'Fields' },
+  { name: 'Forms', route: `/${props.pageName}/forms`, icon: 'mdiSelect', tooltip: 'Forms' },
+  { name: 'Tables', route: `/${props.pageName}/tables`, icon: 'mdiTable', tooltip: 'Tables' }
 ]);
 
 const emit = defineEmits(['toggle']);
@@ -33,7 +34,7 @@ const emit = defineEmits(['toggle']);
                     <p class="bar-txt">{{ item.name }}</p>
                 </span>
             </router-link>
-            <span v-if="isCollapsed" class="tooltip-text">{{ item.tooltip }}</span>
+            <span v-if="isCollapsed" class="tooltip-text" :style="{ color: props.sideBarBg }">{{ item.tooltip }}</span>
         </li>
       </ul>
     </aside>
@@ -43,7 +44,6 @@ const emit = defineEmits(['toggle']);
     aside {
         width: 180px;
         padding: 1rem;
-        /* transition: width 0.3s ease; */
         position: relative;
     }
 
@@ -116,7 +116,6 @@ const emit = defineEmits(['toggle']);
         visibility: hidden;
         width: 100px; 
         background-color: whitesmoke;
-        color: var(--vt-c-breezy-blue-2);
         text-align: center;
         box-shadow: 3px 3px;
         border-radius: 5px;

@@ -6,6 +6,7 @@ import { ref } from 'vue';
 defineProps<{
   navTitle: string
   navBg: string
+  navIcon: string
 }>()
 
 const searchQuery = ref('');
@@ -16,7 +17,7 @@ const handleSearch = () => {
 
 <template>
     <nav class="dashboard-nav" :style="{ backgroundColor: navBg }">
-      <CustomIcon icon="mdiCloud" :size="70" class="theme-icon"/>
+      <CustomIcon :icon="navIcon" :size="70" class="theme-icon"/>
       <h1 class="nav-title staatliches-regular">{{ navTitle }}</h1>
       <div class="search-container">
         <input 

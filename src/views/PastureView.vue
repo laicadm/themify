@@ -5,11 +5,11 @@ import DashboardPane from '@/components/dashboards/DashboardPane.vue';
 <template>
   <main>
     <DashboardPane
-      pageName="breezy"
-      navTitle="Breezy Dashboard"
-      navBg="var(--vt-c-breezy-blue-1)"
-      navIcon="mdiWaves"
-      sideBarBg="var(--vt-c-breezy-blue-1)" 
+      pageName="pasture"
+      navTitle="Pasture Dashboard"
+      navBg="var(--vt-c-pasture-green-1)"
+      navIcon="mdiGrass"
+      sideBarBg="var(--vt-c-pasture-green-1)" 
     />
   </main>
 </template>

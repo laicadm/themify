@@ -4,8 +4,10 @@ import Sidebar from './components/Sidebar.vue';
 import { ref } from 'vue';
 
 defineProps<{
+  pageName: string
   navTitle: string
   navBg: string
+  navIcon: string
   sideBarBg: string
 }>()
 
@@ -19,9 +21,9 @@ const toggleSidebar = () => {
 
 <template>
     <div class="dashboard">
-      <Navbar :navTitle="navTitle" :navBg="navBg"/>
+      <Navbar :navTitle="navTitle" :navBg="navBg" :navIcon="navIcon"/>
       <div class="main">
-        <Sidebar :sideBarBg="sideBarBg" :isCollapsed="isSidebarCollapsed" @toggle="toggleSidebar"/>
+        <Sidebar :pageName="pageName" :sideBarBg="sideBarBg" :isCollapsed="isSidebarCollapsed" @toggle="toggleSidebar"/>
         <div class="content">
           <router-view />
         </div>

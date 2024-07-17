@@ -22,7 +22,7 @@ import CustomIcon from './icons/CustomIcon.vue'
     <template #heading>Pasture</template>
 
     Bring a sense of freedom and appreciation for nature with the green themed
-    <a href="/monotone" rel="noopener">Pasture</a>.
+    <a href="/pasture" rel="noopener">Pasture</a>.
     It prefers simplicity and a slower pace of life.
   </FeatureItem>
 
@@ -44,7 +44,7 @@ import CustomIcon from './icons/CustomIcon.vue'
     <template #heading>Macaroons</template>
 
     Embody the gentleness and serene demeanor with our pastel theme called
-    <a href="/monotone" rel="noopener">Macaroons</a>. 
+    <a href="/macaroons" rel="noopener">Macaroons</a>. 
     A combination of subtle pink and teal that reflects sweetness.
   </FeatureItem>
 
