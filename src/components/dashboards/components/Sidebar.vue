@@ -17,7 +17,11 @@ const menuItems = ref([
   { name: 'Tables', route: `/${props.pageName}/tables`, icon: 'mdiTable', tooltip: 'Tables' }
 ]);
 
-const emit = defineEmits(['toggle', 'exit']);
+const emit = defineEmits(['toggle', 'exit', 'select']);
+
+function selectItem(itemName: string) {
+  emit('select', itemName);
+}
 </script>
 
 <template>
@@ -27,7 +31,7 @@ const emit = defineEmits(['toggle', 'exit']);
       </button>
       <ul>
         <li v-for="item in menuItems" :key="item.route" :class="{ tooltip: isCollapsed }">
-            <router-link :to="item.route">
+            <router-link :to="item.route" active-class="active" @click="selectItem(item.name)">
                 <CustomIcon v-if="isCollapsed" :icon="item.icon" :size="24" class="bar-icon" />
                 <span v-else class="not-collapsed-link">
                     <CustomIcon :icon="item.icon" :size="24" />
@@ -68,11 +72,11 @@ const emit = defineEmits(['toggle', 'exit']);
 
     .toggle-button {
         position: absolute;
-        top: 15px;
+        top: 12px;
         right: 10px;
         background: none;
         border: 2px solid white;
-        border-radius: 5px;
+        border-radius: 3px;
         color: white;
         cursor: pointer;
         font-size: 18px;
@@ -95,16 +99,16 @@ const emit = defineEmits(['toggle', 'exit']);
         padding: 1rem 0;
         transition: padding 0.3s ease;
     }
+    
+    li:hover .bar-txt, .active .bar-txt {
+        font-weight: bolder;
+        border-bottom: 2px solid white;
+        transition: 0.3s;
+    }
 
-    li:hover {
-        .bar-txt {
-            font-weight: bolder;
-            border-bottom: 2px solid white;
-        }
-        .bar-icon {
-            width: 100%;
-            height: 80%;
-        }
+    li:hover .bar-icon, .active .bar-icon {
+        width: 100%;
+        height: 80%;
     }
 
     .not-collapsed-link {
