@@ -92,6 +92,11 @@
   font-weight: normal;
 }
 
+.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
 body {
   min-height: 100vh;
   color: var(--color-text-bright);

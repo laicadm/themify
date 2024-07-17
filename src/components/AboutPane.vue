@@ -4,6 +4,7 @@ import FeatureItem from './FeatureItem.vue'
 import CustomIcon from './icons/CustomIcon.vue'
 import { aboutItems as aboutItemsData } from '@/assets/data/home/aboutData';
 
+// get data from assets
 const aboutItems = ref(aboutItemsData);
 </script>
 

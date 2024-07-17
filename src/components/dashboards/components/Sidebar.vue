@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { defineProps, defineEmits } from 'vue';
 import CustomIcon from '@/components/icons/CustomIcon.vue';
+import DisplayModeToggle from './toggles/DisplayModeToggle.vue';
 import { ref } from 'vue';
 
 const props = defineProps<{
@@ -9,6 +10,7 @@ const props = defineProps<{
   isCollapsed: boolean
 }>()
 
+// used to loop sidebar items
 const menuItems = ref([
   { name: 'Home', route: `/${props.pageName}`, icon: 'mdiHome', tooltip: 'Home' },
   { name: 'Buttons', route: `/${props.pageName}/buttons`, icon: 'mdiButtonPointer', tooltip: 'Buttons' },
@@ -41,9 +43,10 @@ function selectItem(itemName: string) {
             <span v-if="isCollapsed" class="tooltip-text" :style="{ color: props.sideBarBg }">{{ item.tooltip }}</span>
         </li>
       </ul>
-      <router-link to="/" class="exit-button">
+      <DisplayModeToggle :isCollapsed="isCollapsed" />
+      <router-link to="/">
         <button class="exit-button" @click="$emit('exit')">
-            <CustomIcon :icon="'mdiExitToApp'" :size="24"/>
+            <CustomIcon :icon="'mdiExitToApp'" :size="26"/>
             <span v-if="!isCollapsed">
                 <p>Exit Demo</p>
             </span>
@@ -150,7 +153,7 @@ function selectItem(itemName: string) {
         opacity: 1;
     }
 
-    .exit-button {
+    .exit-button, .display-mode {
         background: none;
         border: none;
         color: white;
@@ -163,7 +166,7 @@ function selectItem(itemName: string) {
         margin-top: auto;
     }
 
-    .exit-button span {
+    .exit-button span, .display-mode span {
         margin-left: 1rem;
     }
 
