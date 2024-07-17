@@ -1,62 +1,24 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import FeatureItem from './FeatureItem.vue'
 import CustomIcon from './icons/CustomIcon.vue'
+import { featureItems as featureItemsData } from '@/assets/data/home/featureData';
+
+const featureItems = ref(featureItemsData);
 </script>
 
 <template>
-  <FeatureItem class="f-wrapper">
-    <template #icon>
-      <CustomIcon icon="mdiWaves" :size="32" class="breeze-icon"/>
-    </template>
-    <template #heading>Breezy</template>
-
-    Relax with the standard blue theme called
-    <a href="/breezy" rel="noopener">Breezy</a> as it
-    exudes a sense of tranquility and stability to revitalize those around it.
-  </FeatureItem>
-
-  <FeatureItem class="f-wrapper">
-    <template #icon>
-      <CustomIcon icon="mdiGrass" :size="32" class="pasture-icon"/>
-    </template>
-    <template #heading>Pasture</template>
-
-    Bring a sense of freedom and appreciation for nature with the green themed
-    <a href="/pasture" rel="noopener">Pasture</a>.
-    It prefers simplicity and a slower pace of life.
-  </FeatureItem>
-
-  <FeatureItem class="f-wrapper">
-    <template #icon>
-      <CustomIcon icon="mdiCloud" :size="32" class="autumn-sky-icon"/>
-    </template>
-    <template #heading>Autumn Sky</template>
-
-    The nostalgic blue and orange called
-    <a href="/autumnsky" rel="noopener">Autumn Sky</a>
-    blends the beautiful transitions of a warm summer to the deeper hues of winter.
-  </FeatureItem>
-
-  <FeatureItem class="f-wrapper">
-    <template #icon>
-      <CustomIcon icon="mdiIceCream" :size="32" class="macaroons-icon"/>
-    </template>
-    <template #heading>Macaroons</template>
-
-    Embody the gentleness and serene demeanor with our pastel theme called
-    <a href="/macaroons" rel="noopener">Macaroons</a>. 
-    A combination of subtle pink and teal that reflects sweetness.
-  </FeatureItem>
-
-  <FeatureItem class="f-wrapper">
-    <template #icon>
-      <CustomIcon icon="mdiContrastCircle" :size="32" />
-    </template>
-    <template #heading>Monotone</template>
-
-    For a calm and composed demeanor, it is the black and white theme called
-    <a href="/monotone" rel="noopener">Monotone</a>. 
-    It speaks in a measured and even tone that rarely changes pitch. 
+  <FeatureItem 
+      v-for="(item, index) in featureItems" 
+      :key="index" 
+      class="f-wrapper">
+      <template #icon>
+        <CustomIcon :icon="item.icon" :size="32" :class="item.iconClass"/>
+      </template>
+      <template #heading>
+        <a :href="item.link" class="head-title" rel="noopener">{{ item.heading }}</a>
+      </template>
+      <div v-html="item.description"></div>
   </FeatureItem>
 </template>
 
@@ -84,7 +46,12 @@ import CustomIcon from './icons/CustomIcon.vue'
   padding-bottom: 2rem;
 }
 
-a {
+a, .item-link {
   color: #4182b4;
+}
+
+.head-title {
+  font-weight: bolder;
+  margin-left: -0.3em;
 }
 </style>

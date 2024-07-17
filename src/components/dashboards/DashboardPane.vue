@@ -21,11 +21,11 @@ const toggleSidebar = () => {
 
 <template>
     <div class="dashboard">
-      <Navbar :navTitle="navTitle" :navBg="navBg" :navIcon="navIcon"/>
+      <Navbar :navTitle="navTitle" :navBg="navBg" :navIcon="navIcon" :pageName="pageName"/>
       <div class="main">
         <Sidebar :pageName="pageName" :sideBarBg="sideBarBg" :isCollapsed="isSidebarCollapsed" @toggle="toggleSidebar"/>
         <div class="content">
-          <router-view />
+          <!-- <router-view /> -->
         </div>
       </div>
     </div>

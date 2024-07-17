@@ -6,7 +6,7 @@ import DashboardPane from '@/components/dashboards/DashboardPane.vue';
   <main>
     <DashboardPane
       pageName="autumnsky"
-      navTitle="Atumn Sky Dashboard"
+      navTitle="Autumn Sky Dashboard"
       navBg="var(--vt-c-autumnsky-blue-1)"
       navIcon="mdiCloud"
       sideBarBg="var(--vt-c-autumnsky-orange-2)" 

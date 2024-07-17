@@ -17,13 +17,13 @@ const menuItems = ref([
   { name: 'Tables', route: `/${props.pageName}/tables`, icon: 'mdiTable', tooltip: 'Tables' }
 ]);
 
-const emit = defineEmits(['toggle']);
+const emit = defineEmits(['toggle', 'exit']);
 </script>
 
 <template>
     <aside :style="{ backgroundColor: sideBarBg }" :class="{ collapsed: isCollapsed }">
       <button class="toggle-button" @click="$emit('toggle')">
-        <CustomIcon :icon="isCollapsed ? 'mdiMenu' : 'mdiChevronLeft'" :size="26" class="macaroons-icon"/>
+        <CustomIcon :icon="isCollapsed ? 'mdiMenu' : 'mdiChevronLeft'" :size="26"/>
       </button>
       <ul>
         <li v-for="item in menuItems" :key="item.route" :class="{ tooltip: isCollapsed }">
@@ -37,6 +37,14 @@ const emit = defineEmits(['toggle']);
             <span v-if="isCollapsed" class="tooltip-text" :style="{ color: props.sideBarBg }">{{ item.tooltip }}</span>
         </li>
       </ul>
+      <router-link to="/" class="exit-button">
+        <button class="exit-button" @click="$emit('exit')">
+            <CustomIcon :icon="'mdiExitToApp'" :size="24"/>
+            <span v-if="!isCollapsed">
+                <p>Exit Demo</p>
+            </span>
+        </button>
+      </router-link>
     </aside>
 </template>
 
@@ -45,6 +53,9 @@ const emit = defineEmits(['toggle']);
         width: 180px;
         padding: 1rem;
         position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
     }
 
     a {
@@ -57,7 +68,7 @@ const emit = defineEmits(['toggle']);
 
     .toggle-button {
         position: absolute;
-        top: 10px;
+        top: 15px;
         right: 10px;
         background: none;
         border: 2px solid white;
@@ -133,6 +144,23 @@ const emit = defineEmits(['toggle']);
     .tooltip:hover .tooltip-text {
         visibility: visible;
         opacity: 1;
+    }
+
+    .exit-button {
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding: 1rem 0;
+        justify-content: center;
+        transition: padding 0.3s ease;
+        margin-top: auto;
+    }
+
+    .exit-button span {
+        margin-left: 1rem;
     }
 
 </style>
