@@ -44,7 +44,8 @@ function changeContent(selectedItem: ComponentKey) {
       <Navbar :navTitle="navTitle"
               :navBg="navBg"
               :navIcon="navIcon"
-              :pageName="pageName"/>
+              :pageName="pageName"
+              />
       <div class="main">
         <Sidebar :pageName="pageName"
                  :sideBarBg="sideBarBg"

@@ -17,7 +17,7 @@ const { navBg, sideBarBg } = displayModeTheme({
       navTitle="Macaroons Dashboard"
       :navBg="navBg"
       navIcon="mdiIceCream"
-      :sideBarBg="sideBarBg" 
+      :sideBarBg="sideBarBg"
     />
   </main>
 </template>

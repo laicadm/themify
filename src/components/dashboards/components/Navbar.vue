@@ -2,7 +2,9 @@
 import CustomIcon from '@/components/icons/CustomIcon.vue';
 import { defineProps } from 'vue';
 import { ref, computed } from 'vue';
+import { useDarkMode } from '@/composables/useDarkMode';
 
+const isDarkMode = useDarkMode();
 
 const props = defineProps<{
   navTitle: string
@@ -69,15 +71,14 @@ const filteredThemeItems = computed(() => {
 
 <style>
     .dashboard-nav {
-        color: #fff;
+        color: white;
         display: flex;
         justify-content: space-between;
     }
 
     .theme-icon {
+        color: white;
         background-color: transparent;
-        /* color: var(--vt-c-breezy-blue-1); */
-        color: #fff;
         padding: 5px;
     }
 

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue';
 import DashboardPane from '@/components/dashboards/DashboardPane.vue';
 import { displayModeTheme } from '@/composables/displayModeTheme';
 
@@ -18,7 +19,7 @@ const { navBg, sideBarBg } = displayModeTheme({
       navTitle="Autumn Sky Dashboard"
       :navBg="navBg"
       navIcon="mdiCloud"
-      :sideBarBg="sideBarBg" 
+      :sideBarBg="sideBarBg"
     />
   </main>
 </template>

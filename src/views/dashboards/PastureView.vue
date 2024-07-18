@@ -8,6 +8,7 @@ const { navBg, sideBarBg } = displayModeTheme({
   sideBarDefault: 'var(--vt-c-pasture-green-2)',
   sideBarDark: 'var(--vt-c-pasture-green-1)',
 });
+
 </script>
 
 <template>
@@ -17,7 +18,7 @@ const { navBg, sideBarBg } = displayModeTheme({
       navTitle="Pasture Dashboard"
       :navBg="navBg"
       navIcon="mdiGrass"
-      :sideBarBg="sideBarBg" 
+      :sideBarBg="sideBarBg"
     />
   </main>
 </template>

@@ -8,6 +8,7 @@ const { navBg, sideBarBg } = displayModeTheme({
   sideBarDefault: 'var(--vt-c-breezy-blue-2)',
   sideBarDark: 'var(--vt-c-breezy-blue-1)',
 });
+
 </script>
 
 <template>
@@ -17,7 +18,7 @@ const { navBg, sideBarBg } = displayModeTheme({
       navTitle="Breezy Dashboard"
       :navBg="navBg"
       navIcon="mdiWaves"
-      :sideBarBg="sideBarBg" 
+      :sideBarBg="sideBarBg"
     />
   </main>
 </template>

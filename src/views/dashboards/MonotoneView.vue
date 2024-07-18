@@ -17,7 +17,7 @@ const { navBg, sideBarBg } = displayModeTheme({
       navTitle="Monotone Dashboard"
       :navBg="navBg"
       navIcon="mdiContrastCircle"
-      :sideBarBg="sideBarBg" 
+      :sideBarBg="sideBarBg"
     />
   </main>
 </template>
