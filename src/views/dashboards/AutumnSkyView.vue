@@ -1,5 +1,14 @@
 <script setup lang="ts">
 import DashboardPane from '@/components/dashboards/DashboardPane.vue';
+import { displayModeTheme } from '@/composables/displayModeTheme';
+
+const { navBg, sideBarBg } = displayModeTheme({
+  navDefault: 'var(--vt-c-autumnsky-blue-2)',
+  navDark: 'var(--vt-c-autumnsky-blue-1)',
+  sideBarDefault: 'var(--vt-c-autumnsky-orange-2)',
+  sideBarDark: 'var(--vt-c-autumnsky-orange-1)',
+});
+
 </script>
 
 <template>
@@ -7,9 +16,9 @@ import DashboardPane from '@/components/dashboards/DashboardPane.vue';
     <DashboardPane
       pageName="autumnsky"
       navTitle="Autumn Sky Dashboard"
-      navBg="var(--vt-c-autumnsky-blue-1)"
+      :navBg="navBg"
       navIcon="mdiCloud"
-      sideBarBg="var(--vt-c-autumnsky-orange-2)" 
+      :sideBarBg="sideBarBg" 
     />
   </main>
 </template>

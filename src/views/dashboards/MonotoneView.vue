@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import DashboardPane from '@/components/dashboards/DashboardPane.vue';
+import { displayModeTheme } from '@/composables/displayModeTheme';
+
+const { navBg, sideBarBg } = displayModeTheme({
+  navDefault: 'var(--vt-c-black-mute)',
+  navDark: 'var(--vt-c-black-soft)',
+  sideBarDefault: 'var(--vt-c-black-mute)',
+  sideBarDark: 'var(--vt-c-black-soft)',
+});
 </script>
 
 <template>
@@ -7,9 +15,9 @@ import DashboardPane from '@/components/dashboards/DashboardPane.vue';
     <DashboardPane
       pageName="monotone"
       navTitle="Monotone Dashboard"
-      navBg="var(--vt-c-black-soft)"
+      :navBg="navBg"
       navIcon="mdiContrastCircle"
-      sideBarBg="var(--vt-c-black-mute)" 
+      :sideBarBg="sideBarBg" 
     />
   </main>
 </template>
