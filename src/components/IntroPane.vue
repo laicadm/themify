@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import DisplayModeToggle from './dashboards/components/toggles/DisplayModeToggle.vue';
 defineProps<{
   msg: string
 }>()
@@ -6,7 +7,10 @@ defineProps<{
 
 <template>
   <div class="greetings">
-    <h1 class="blue-link">{{ msg }}</h1>
+    <div class="title">
+      <h1 class="blue-link themify">{{ msg }}</h1>
+      <span class="toggle-mode"><DisplayModeToggle :isCollapsed="true"/></span>
+    </div>
     <h3>
       Offers you a dashboard of various themes.
       From forms to tables, we got the things you need!
@@ -19,7 +23,6 @@ h1 {
   font-weight: 500;
   font-size: 2.6rem;
   position: relative;
-  top: -10px;
 }
 
 h3 {
@@ -36,5 +39,23 @@ h3 {
   .greetings h3 {
     text-align: left;
   }
+}
+
+.title {
+  display: flex;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.themify {
+  margin-right: 1rem;
+}
+
+.title >>> .display-mode {
+  color: rgb(78, 133, 235);;
+}
+
+.toggle-mode {
+  margin-top: -0.8rem;
 }
 </style>

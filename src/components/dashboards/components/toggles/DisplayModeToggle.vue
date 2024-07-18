@@ -31,7 +31,7 @@ onMounted(() => {
 
 <template>
     <button class="display-mode" @click="toggleMode">
-        <CustomIcon :icon="isDarkMode ? 'mdiWeatherNight' : 'mdiWeatherSunny' " :size="26" />
+        <CustomIcon :icon="isDarkMode ? 'mdiWeatherNight' : 'mdiBrightness7' " :size="26" />
         <span v-if="!isCollapsed">
             <p>{{ isDarkMode ? 'Dark' : 'Light' }} Mode</p>
         </span>

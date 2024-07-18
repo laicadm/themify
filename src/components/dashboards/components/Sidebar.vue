@@ -43,15 +43,18 @@ function selectItem(itemName: string) {
             <span v-if="isCollapsed" class="tooltip-text" :style="{ color: props.sideBarBg }">{{ item.tooltip }}</span>
         </li>
       </ul>
-      <DisplayModeToggle :isCollapsed="isCollapsed" />
-      <router-link to="/">
-        <button class="exit-button" @click="$emit('exit')">
-            <CustomIcon :icon="'mdiExitToApp'" :size="26"/>
-            <span v-if="!isCollapsed">
-                <p>Exit Demo</p>
-            </span>
-        </button>
-      </router-link>
+      <div class="sidebar-bottom">
+        <DisplayModeToggle :isCollapsed="isCollapsed" />
+        <router-link to="/">
+            <button class="exit-button" @click="$emit('exit')">
+                <CustomIcon :icon="'mdiExitToApp'" :size="26"/>
+                <span v-if="!isCollapsed">
+                    <p>Exit Demo</p>
+                </span>
+            </button>
+        </router-link>
+      </div>
+      
     </aside>
 </template>
 
@@ -163,11 +166,18 @@ function selectItem(itemName: string) {
         padding: 1rem 0;
         justify-content: center;
         transition: padding 0.3s ease;
-        margin-top: auto;
+    }
+
+    .display-mode {
+        margin-bottom: -1rem;
     }
 
     .exit-button span, .display-mode span {
         margin-left: 1rem;
+    }
+
+    .sidebar-bottom {
+        margin-top: auto;
     }
 
 </style>

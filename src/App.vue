@@ -21,7 +21,6 @@ watch(
 
     <div class="wrapper">
       <IntroPane msg="Themify" />
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
