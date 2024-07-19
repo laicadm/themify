@@ -3,6 +3,7 @@ import CustomIcon from '@/components/icons/CustomIcon.vue';
 import { defineProps } from 'vue';
 import { ref, computed } from 'vue';
 import { useDarkMode } from '@/composables/useDarkMode';
+import SearchBar from './inputs/SearchBar.vue';
 
 const isDarkMode = useDarkMode();
 
@@ -13,12 +14,7 @@ const props = defineProps<{
   pageName: string
 }>()
 
-const searchQuery = ref('');
 const isOptionsOpen = ref(false);
-
-const handleSearch = () => {
-  console.log('Searching for:', searchQuery.value);
-};
 
 const toggleOptions = () => {
     isOptionsOpen.value = !isOptionsOpen.value;
@@ -42,15 +38,7 @@ const filteredThemeItems = computed(() => {
     <nav class="dashboard-nav" :style="{ backgroundColor: navBg }">
       <CustomIcon :icon="navIcon" :size="70" class="theme-icon"/>
       <h1 class="nav-title staatliches-regular">{{ navTitle }}</h1>
-      <div class="search-container">
-        <input 
-            type="text" 
-            v-model="searchQuery" 
-            @input="handleSearch"
-            placeholder="Search"
-            class="search-input"
-        />
-      </div>
+      <SearchBar bgColor="transparent" txtColor="white" />
       <div class="settings-container">
         <button class="settings-button" @click="toggleOptions">
             <CustomIcon :icon="'mdiFormatPaint'" :size="24" />
@@ -92,21 +80,6 @@ const filteredThemeItems = computed(() => {
         font-family: "Staatliches", sans-serif;
         font-weight: 400;
         font-style: normal;
-    }
-
-    .search-container {
-        flex: 1;
-        display: flex;
-        justify-content: flex-end;
-        height: 50%;
-        margin: 1rem;
-    }
-
-    .search-input {
-        padding: 0.5rem;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-        font-size: 1rem;
     }
 
     .settings-container {
